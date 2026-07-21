@@ -22,7 +22,7 @@ def fetch_show_details(show_id):
     """Get better data(keywords,genres,and overview)"""
     details = requests.get(
         f"{TMDB_BASE}/tv/{show_id}",
-        params={"api_key" : TMDB_API_KEY, "append_to_responsse": "keywords,credits"},
+        params={"api_key" : TMDB_API_KEY, "append_to_response": "keywords,credits"},
     ).json()
 
     return details
@@ -72,3 +72,4 @@ def build_dataset(pages=50, out_path="shows.json"):
 
 if __name__ == "__main__":
     build_dataset(pages=50)
+    
