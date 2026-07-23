@@ -3,8 +3,12 @@ import numpy as np
 import json
 import time
 from sentence_transformers import SentenceTransformer 
+import os
+from dotenv import load_dotenv
 
-TMDB_API_KEY = "2d30a5a140f3dea967a59650d571b262"
+load_dotenv()
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+
 TMDB_BASE = "https://api.themoviedb.org/3"
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -72,4 +76,5 @@ def build_dataset(pages=50, out_path="shows.json"):
 
 if __name__ == "__main__":
     build_dataset(pages=50)
-    
+
+"""run 'uvicorn api:app --reload' to test"""

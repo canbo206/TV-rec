@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const API_BASE= "https://localhost:8000";
+const API_BASE= "http://127.0.0.1:8000";
 
 export default function Home() {
     const [query, setQuery] = useState("");
